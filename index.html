@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abhishek | Portfolio</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- tsParticles -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    #tsparticles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+    }
+
+    .glass {
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .dark .glass {
+      background: rgba(0, 0, 0, 0.2);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-black text-white dark:bg-black transition-all duration-300">
+
+  <!-- tsParticles Background -->
+  <div id="tsparticles"></div>
+
+  <!-- Dark Mode Toggle -->
+  <div class="fixed top-4 right-4 z-50">
+    <button onclick="document.documentElement.classList.toggle('dark')" class="bg-gray-200 dark:bg-gray-700 p-2 rounded-full text-black dark:text-white">
+      <i class="fas fa-moon dark:hidden"></i>
+      <i class="fas fa-sun hidden dark:inline"></i>
+    </button>
+  </div>
+
+  <!-- Hero -->
+  <section class="text-center py-10">
+    <img src="assets/profile.jpg" alt="Abhishek" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow-md"/>
+    <h1 class="text-4xl font-bold">I'm Abhishek</h1>
+    <p class="text-xl mt-2 text-gray-300">B.Tech Student | Future Developer</p>
+  </section>
+
+  <!-- About -->
+  <section class="max-w-3xl mx-auto px-4 py-10" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold mb-4 text-center">About Me</h2>
+    <p class="text-center text-lg text-gray-300">
+      I'm Abhishek, a B.Tech student passionate about coding, development, and real-world tech solutions. I love building web platforms and exploring AI & ML domains through practical projects.
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <section class="max-w-3xl mx-auto px-4 py-6" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold mb-4 text-center">Skills</h2>
+    <div class="flex flex-wrap justify-center gap-4">
+      <span class="bg-blue-500 px-4 py-2 rounded-full text-white">HTML</span>
+      <span class="bg-green-500 px-4 py-2 rounded-full text-white">CSS</span>
+      <span class="bg-yellow-400 px-4 py-2 rounded-full text-white">JavaScript</span>
+      <span class="bg-indigo-500 px-4 py-2 rounded-full text-white">Python</span>
+      <span class="bg-gray-800 px-4 py-2 rounded-full text-white">Machine Learning</span>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="max-w-5xl mx-auto px-4 py-10" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold mb-6 text-center">Projects</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="glass p-6 rounded-lg shadow text-center text-white">
+        <h3 class="text-lg font-semibold mb-2">Crime Reporting System</h3>
+        <p class="mb-3 text-sm">A web platform to report and manage criminal cases using Java + MySQL.</p>
+        <a href="#" class="text-blue-400 font-semibold hover:underline">GitHub</a>
+      </div>
+      <div class="glass p-6 rounded-lg shadow text-center text-white">
+        <h3 class="text-lg font-semibold mb-2">Student Performance Predictor</h3>
+        <p class="mb-3 text-sm">ML-based system to predict student results using regression and classification.</p>
+        <a href="#" class="text-blue-400 font-semibold hover:underline">GitHub</a>
+      </div>
+      <div class="glass p-6 rounded-lg shadow text-center text-white">
+        <h3 class="text-lg font-semibold mb-2">IoT-based Inventory System</h3>
+        <p class="mb-3 text-sm">An IoT-connected DBMS to track and manage inventory efficiently.</p>
+        <a href="#" class="text-blue-400 font-semibold hover:underline">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume -->
+  <section class="text-center py-10" data-aos="zoom-in">
+    <h2 class="text-2xl font-semibold mb-4">Resume</h2>
+    <a href="assets/resume.pdf" download class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full transition">Download Resume</a>
+  </section>
+
+  <!-- Contact -->
+  <section class="max-w-xl mx-auto px-4 py-10" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold mb-6 text-center">Contact Me</h2>
+    <form id="contactForm" action="https://formsubmit.co/nikhil760675@gmail.com" method="POST" class="glass space-y-4 p-6 rounded-lg shadow">
+      <input type="text" name="name" required placeholder="Your Name" class="w-full px-4 py-2 rounded border border-gray-300 bg-gray-100 dark:bg-gray-800 dark:border-gray-700"/>
+      <input type="email" name="email" required placeholder="Your Email" class="w-full px-4 py-2 rounded border border-gray-300 bg-gray-100 dark:bg-gray-800 dark:border-gray-700"/>
+      <textarea name="message" required placeholder="Your Message" rows="4" class="w-full px-4 py-2 rounded border border-gray-300 bg-gray-100 dark:bg-gray-800 dark:border-gray-700"></textarea>
+      <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full w-full">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white text-center py-6" data-aos="fade-up">
+    <p>📧 <a href="mailto:nikhil760675@gmail.com" class="hover:underline">nikhil760675@gmail.com</a></p>
+    <div class="mt-4 text-xl space-x-4">
+      <a href="https://github.com/" class="hover:text-blue-400"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/" class="hover:text-blue-400"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <p class="text-sm mt-6">© 2025 Abhishek. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      Swal.fire({
+        icon: 'success',
+        title: 'Message Sent!',
+        text: 'Thank you for reaching out.',
+        timer: 2000,
+        showConfirmButton: false
+      });
+      setTimeout(() => form.submit(), 2200);
+    });
+
+    tsParticles.load("tsparticles", {
+      fullScreen: { enable: false },
+      background: { color: "transparent" },
+      particles: {
+        number: { value: 80 },
+        color: { value: "#ffffff" },
+        size: { value: 2 },
+        move: { enable: true, speed: 0.5 },
+        links: { enable: true, color: "#ffffff", opacity: 0.3 },
+        opacity: { value: 0.5 },
+      },
+      interactivity: {
+        events: {
+          onHover: { enable: true, mode: "repulse" },
+          onClick: { enable: true, mode: "push" },
+        },
+        modes: {
+          repulse: { distance: 100 },
+          push: { quantity: 4 },
+        }
+      },
+      detectRetina: true,
+    });
+  </script>
+</body>
+</html>
